@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Inline Text Editor",
+  title: "Paradigm AI",
   description: "AI-powered text editor with copilot",
-  generator: "v0.app",
+  generator: "ryan's huge brain",
 }
 
 export default function RootLayout({
