@@ -22,7 +22,7 @@ const Auth = ({valid, setValid}:AuthProps) => {
 
             const data = await response.json()
             console.log("data from /auth:", data);
-            // setValid(data.response)
+            setValid(data.response)
         } catch (error) {
             console.error("error performing auth:", error)
         }

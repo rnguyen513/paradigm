@@ -46,8 +46,9 @@ export default function Home() {
     }
 
     return (
-        <div className="min-h-screen bg-background flex">
-            {isAuthorized ? (<div>
+        <div>
+            {isAuthorized ? (
+            <div className="min-h-screen bg-background flex">
                 <div className="flex-1 flex flex-col">
                     <header className="border-b border-border px-6 py-4">
                         <h1 className="text-2xl font-bold text-foreground">Paradigm AI</h1>
