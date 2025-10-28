@@ -1,95 +1,36 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import { TextEditor } from "@/components/text-editor"
-import { CopilotModal } from "@/components/copilot-modal"
-import { FileUpload } from "@/components/file-upload"
-import { ResponsePanel } from "@/components/response-panel"
-
-import Auth from "@/components/auth"
+import { Hero } from "@/components/hero"
+import { Features } from "@/components/features"
+import { Integration } from "@/components/integration"
+import { Database } from "@/components/database"
+import { CTA } from "@/components/cta"
+import { ParticleField } from "@/components/particle-field"
+import { FloatingElements } from "@/components/floating-elements"
 
 export default function Home() {
-    const [isCopilotOpen, setIsCopilotOpen] = useState(false)
-    const [editorContent, setEditorContent] = useState("")
-    const [uploadedFiles, setUploadedFiles] = useState<Array<{ name: string; content: string }>>([])
-    const [aiResponse, setAiResponse] = useState<string | null>(null)
-    const [isGenerating, setIsGenerating] = useState(false)
+  return (
+    <main className="relative min-h-screen overflow-hidden bg-black text-white">
+      <div className="pointer-events-none absolute inset-0 z-0 h-[200vh]">
+        {/* Animated spotlight effect */}
+        <div className="animate-spotlight absolute left-1/2 top-0 h-[150vh] w-[1200px] -translate-x-1/2 rounded-full bg-gradient-radial from-rose-500/40 via-pink-500/20 to-transparent blur-3xl" />
 
-    const [isAuthorized, setIsAuthorized] = useState(false);
+        {/* Morphing blobs */}
+        <div className="animate-morph absolute right-1/4 top-0 h-[120vh] w-[800px] rounded-full bg-gradient-to-br from-rose-400/30 via-pink-500/20 to-fuchsia-500/30 blur-3xl" />
+        <div
+          className="animate-morph absolute bottom-0 left-1/4 h-[100vh] w-[700px] rounded-full bg-gradient-to-tl from-pink-400/25 via-rose-500/15 to-red-400/20 blur-3xl"
+          style={{ animationDelay: "4s" }}
+        />
 
-    // Keyboard shortcut to toggle copilot (Cmd/Ctrl + K)
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-                e.preventDefault()
-                setIsCopilotOpen((prev) => !prev)
-            }
-        }
+        {/* Grid overlay for depth */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+      </div>
 
-        window.addEventListener("keydown", handleKeyDown)
-        return () => window.removeEventListener("keydown", handleKeyDown)
-    }, [])
-
-    const handleFileUpload = (files: Array<{ name: string; content: string }>) => {
-        setUploadedFiles((prev) => [...prev, ...files])
-    }
-
-    const handleRemoveFile = (index: number) => {
-        setUploadedFiles((prev) => prev.filter((_, i) => i !== index))
-    }
-
-    const handleInsertResponse = () => {
-        if (aiResponse) {
-            setEditorContent((prev) => prev + "\n\n" + aiResponse)
-            setAiResponse(null)
-        }
-    }
-
-    return (
-        <div>
-            {isAuthorized ? (
-            <div className="min-h-screen bg-background flex">
-                <div className="flex-1 flex flex-col">
-                    <header className="border-b border-border px-6 py-4">
-                        <h1 className="text-2xl font-bold text-foreground">Paradigm AI</h1>
-                        <p className="text-sm text-muted-foreground mt-1">
-                            Press <kbd className="px-2 py-1 text-xs bg-muted rounded">⌘K</kbd> to open AI copilot
-                        </p>
-                    </header>
-
-                    <div className="flex-1 p-6">
-                        <TextEditor content={editorContent} onChange={setEditorContent} />
-                    </div>
-                </div>
-
-                <aside className="w-80 border-l border-border bg-muted/30 flex flex-col">
-                    <div className="p-6 border-b border-border">
-                        <h2 className="text-sm font-semibold text-foreground mb-4">Context Files</h2>
-                        <FileUpload
-                            onFilesUploaded={handleFileUpload}
-                            uploadedFiles={uploadedFiles}
-                            onRemoveFile={handleRemoveFile}
-                        />
-                    </div>
-                </aside>
-
-                <CopilotModal
-                    isOpen={isCopilotOpen}
-                    onClose={() => setIsCopilotOpen(false)}
-                    editorContent={editorContent}
-                    uploadedFiles={uploadedFiles}
-                    onResponse={setAiResponse}
-                    isGenerating={isGenerating}
-                    setIsGenerating={setIsGenerating}
-                />
-
-                {aiResponse && (
-                    <ResponsePanel response={aiResponse} onInsert={handleInsertResponse} onClose={() => setAiResponse(null)} />
-                )}
-            </div>
-            ) : (
-                <Auth setValid={setIsAuthorized}/>
-            )}
-        </div>
-    )
+      <ParticleField />
+      <FloatingElements />
+      <Hero />
+      <Features />
+      <Integration />
+      <Database />
+      <CTA />
+    </main>
+  )
 }
