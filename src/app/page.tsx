@@ -29,8 +29,8 @@ export default function Home() {
       <Hero />
       <Features />
       <Integration />
-      <Database />
-      <CTA />
+      {/* <Database />
+      <CTA /> */}
     </main>
   )
 }
