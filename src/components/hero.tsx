@@ -4,10 +4,13 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { MagneticButton } from "./magnetic-button"
+import { useRouter } from "next/navigation"
 
 export function Hero() {
     const heroRef = useRef<HTMLElement>(null)
     const titleRef = useRef<HTMLHeadingElement>(null)
+
+    const router = useRouter();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -69,10 +72,10 @@ export function Hero() {
                     </span>
                 </h1>
 
-                <p className="fade-in-element mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed text-muted-foreground opacity-0 transition-all duration-700 delay-200 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 md:text-2xl">
-                    <span className="font-semibold text-indigo-400">Paradigm AI</span> is a predictive research intelligence
+                <p className="fade-in-element mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed opacity-0 transition-all duration-700 delay-200 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 md:text-2xl">
+                    <span className="font-semibold text-red-400">Paradigm AI</span> is a predictive research intelligence
                     platform that helps scientists validate hypotheses before investing years of work — analyzing{" "}
-                    <span className="font-semibold text-indigo-400">200M+ papers, 15M grants</span>, and real-world failure data
+                    <span className="font-semibold text-red-400">200M+ papers, 15M grants</span>, and real-world failure data
                     to forecast feasibility, risk, and impact.
                 </p>
 
@@ -81,9 +84,10 @@ export function Hero() {
                         <Button
                             size="lg"
                             className="animate-glow-pulse group relative h-14 gap-2 overflow-hidden rounded-full px-10 text-lg font-semibold shadow-2xl shadow-rose-500/30 transition-all hover:scale-105 hover:shadow-rose-500/50 hover:cursor-pointer"
+                            onClick={() => window.open("https://calendly.com/rnguyen513/30min", "_blank", "noopener,noreferrer")}
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600" />
-                            <span className="relative z-10 text-white">Start writing for free</span>
+                            <span className="relative z-10 text-white">Sign up for the beta | Book a demo</span>
                             <ArrowRight className="relative z-10 h-5 w-5 text-white transition-transform group-hover:translate-x-1" />
                         </Button>
                     </MagneticButton>
@@ -98,9 +102,9 @@ export function Hero() {
                     </MagneticButton> */}
                 </div>
 
-                <p className="fade-in-element mt-8 text-sm text-muted-foreground opacity-0 transition-all duration-700 delay-400 [&.animate-in]:opacity-100">
+                {/* <p className="fade-in-element mt-8 text-sm text-muted-foreground opacity-0 transition-all duration-700 delay-400 [&.animate-in]:opacity-100">
                     No credit card required · 14-day free trial · Cancel anytime
-                </p>
+                </p> */}
             </div>
         </section>
     )

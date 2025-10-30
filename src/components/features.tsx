@@ -47,7 +47,7 @@ export function Features() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative z-10 px-4 py-32 bg-black/90">
+    <section ref={sectionRef} className="relative z-10 px-4 py-32">
       {/* Subtle moving spotlight for depth */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="animate-spotlight h-[600px] w-[600px] rounded-full bg-gradient-to-br from-rose-500/10 via-fuchsia-600/10 to-transparent blur-3xl" />
