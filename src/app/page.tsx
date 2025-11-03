@@ -14,9 +14,9 @@ export default function Home() {
         <div className="animate-spotlight absolute left-1/2 top-0 h-[150vh] w-[1200px] -translate-x-1/2 rounded-full bg-gradient-radial from-rose-500/40 via-pink-500/20 to-transparent blur-3xl" />
 
         {/* Morphing blobs */}
-        <div className="animate-morph absolute right-1/4 top-0 h-[120vh] w-[800px] rounded-full bg-gradient-to-br from-rose-400/30 via-pink-500/20 to-fuchsia-500/30 blur-3xl" />
+        <div className="animate-morph absolute right-1/4 top-0 h-[120vh] w-[800px] rounded-full bg-gradient-to-br from-white-400/30 via-gray-500/20 to-black-500/30 blur-3xl" />
         <div
-          className="animate-morph absolute bottom-0 left-1/4 h-[100vh] w-[700px] rounded-full bg-gradient-to-tl from-pink-400/25 via-rose-500/15 to-red-400/20 blur-3xl"
+          className="animate-morph absolute bottom-0 left-1/4 h-[100vh] w-[700px] rounded-full bg-gradient-to-tl from-white-400/25 via-gray-500/15 to-black-400/20 blur-3xl"
           style={{ animationDelay: "4s" }}
         />
 
@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       <ParticleField />
-      <FloatingElements />
+      {/* <FloatingElements /> */}
       <Hero />
       <Features />
       <Integration />

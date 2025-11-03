@@ -72,8 +72,8 @@ export function ParticleField() {
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1
 
         const gradient = ctx.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.size * 3)
-        gradient.addColorStop(0, `rgba(244, 114, 182, ${particle.opacity})`)
-        gradient.addColorStop(1, `rgba(244, 114, 182, 0)`)
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${particle.opacity})`)
+        gradient.addColorStop(1, `rgba(255, 255, 255, 0)`)
 
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size * 3, 0, Math.PI * 2)
@@ -82,7 +82,7 @@ export function ParticleField() {
 
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(244, 114, 182, ${particle.opacity * 1.5})`
+        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity * 1.5})`
         ctx.fill()
       })
 
@@ -95,9 +95,9 @@ export function ParticleField() {
           if (distance < 180) {
             const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y)
             const opacity = 0.15 * (1 - distance / 180)
-            gradient.addColorStop(0, `rgba(244, 114, 182, ${opacity})`)
+            gradient.addColorStop(0, `rgba(255, 255, 255, ${opacity})`)
             gradient.addColorStop(0.5, `rgba(251, 207, 232, ${opacity * 0.8})`)
-            gradient.addColorStop(1, `rgba(244, 114, 182, ${opacity})`)
+            gradient.addColorStop(1, `rgba(255, 255, 255, ${opacity})`)
 
             ctx.beginPath()
             ctx.moveTo(p1.x, p1.y)

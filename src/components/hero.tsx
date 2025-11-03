@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { MagneticButton } from "./magnetic-button"
 import { useRouter } from "next/navigation"
+import { _libreBaskervilleBold } from "./fonts"
 
 export function Hero() {
     const heroRef = useRef<HTMLElement>(null)
@@ -30,81 +31,54 @@ export function Hero() {
         return () => observer.disconnect()
     }, [])
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (!titleRef.current) return
-    //         const scrollY = window.scrollY
-    //         titleRef.current.style.transform = `translateY(${scrollY * 0.3}px)`
-    //     }
-
-    //     window.addEventListener("scroll", handleScroll)
-    //     return () => window.removeEventListener("scroll", handleScroll)
-    // }, [])
-
     return (
         <section
             ref={heroRef}
-            className="relative z-10 flex min-h-screen items-center justify-center overflow-hidden px-4 py-20"
+            className={`relative z-10 flex min-h-screen items-center justify-center overflow-hidden px-4 py-20`}
         >
             <div className="relative mx-auto max-w-6xl text-center">
-                <div className="fade-in-element glass-strong mb-8 inline-flex items-center gap-3 rounded-full px-6 py-3 opacity-0 shadow-lg shadow-rose-500/10 transition-all duration-700 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4">
+                <div className="fade-in-element glass-strong mb-8 inline-flex items-center gap-3 rounded-full px-6 py-3 opacity-0 shadow-lg shadow-[#4A0E8A]/20 transition-all duration-700 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4">
                     <span className="relative flex h-2.5 w-2.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-400 opacity-75"></span>
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rose-500"></span>
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8E5BFF] opacity-75"></span>
+                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#6A24C8]"></span>
                     </span>
-                    <span className="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text font-medium text-transparent">
-                        Trusted by researchers at 200+ institutions
+                    <span className={"bg-gradient-to-r from-[#8E5BFF] to-[#C09CFF] bg-clip-text font-medium text-transparent"}>
+                        Trusted by researchers at 20+ institutions
                     </span>
-                    <Sparkles className="h-4 w-4 text-rose-400" />
+                    <Sparkles className="h-4 w-4 text-[#8E5BFF]" />
                 </div>
 
                 <h1
                     ref={titleRef}
-                    className="fade-in-element mb-8 text-balance font-[family-name:var(--font-display)] text-6xl font-bold tracking-tight opacity-0 transition-all duration-700 delay-100 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 md:text-8xl lg:text-9xl"
+                    className="fade-in-element mb-8 text-balance font-[family-name:var(--font-display)] text-4xl font-bold tracking-tight opacity-0 transition-all duration-700 delay-100 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 md:text-6xl lg:text-6xl"
                     style={{ transition: "transform 0.1s ease-out" }}
                 >
-                    <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent text-white">
-                        Predict the future
+                    <span className="bg-gradient-to-br from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+                        Fine-tuned predictive
                     </span>
                     <br />
-                    <span className="animate-gradient bg-gradient-to-r from-rose-400 via-pink-400 to-rose-500 bg-clip-text text-transparent">
-                        of your research
+                    <span className={`animate-gradient bg-gradient-to-r from-[#4A0E8A] via-[#8E5BFF] to-[#6A24C8] bg-clip-text text-transparent ${_libreBaskervilleBold.className}`}>
+                        research intelligence
                     </span>
                 </h1>
 
-                <p className="fade-in-element mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed opacity-0 transition-all duration-700 delay-200 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 md:text-2xl">
-                    <span className="font-semibold text-red-400">Paradigm AI</span> is a predictive research intelligence
-                    platform that helps scientists validate hypotheses before investing years of work — analyzing{" "}
-                    <span className="font-semibold text-red-400">200M+ papers, 15M grants</span>, and real-world failure data
-                    to forecast feasibility, risk, and impact.
+                <p className="fade-in-element mx-auto mb-12 max-w-3xl text-pretty text-xl leading-relaxed opacity-0 transition-all duration-700 delay-200 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 md:text-2xl text-gray-200">
+                    <span className="font-semibold text-white italic">Predict, process, visualize</span>
                 </p>
 
                 <div className="fade-in-element flex flex-col items-center justify-center gap-4 opacity-0 transition-all duration-700 delay-300 [&.animate-in]:translate-y-0 [&.animate-in]:opacity-100 translate-y-4 sm:flex-row">
                     <MagneticButton>
                         <Button
                             size="lg"
-                            className="animate-glow-pulse group relative h-14 gap-2 overflow-hidden rounded-full px-10 text-lg font-semibold shadow-2xl shadow-rose-500/30 transition-all hover:scale-105 hover:shadow-rose-500/50 hover:cursor-pointer"
+                            className="animate-glow-pulse group relative h-14 gap-2 overflow-hidden rounded-full px-10 text-lg font-semibold shadow-2xl shadow-[#4A0E8A]/40 transition-all hover:scale-105 hover:shadow-[#6A24C8]/50 hover:cursor-pointer"
                             onClick={() => window.open("https://calendly.com/rnguyen513/30min", "_blank", "noopener,noreferrer")}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#4A0E8A] via-[#8E5BFF] to-[#6A24C8]" />
                             <span className="relative z-10 text-white">Sign up for the beta | Book a demo</span>
                             <ArrowRight className="relative z-10 h-5 w-5 text-white transition-transform group-hover:translate-x-1" />
                         </Button>
                     </MagneticButton>
-                    {/* <MagneticButton>
-                        <Button
-                            size="lg"
-                            variant="outline"
-                            className="glass-strong h-14 rounded-full border-2 border-rose-500/30 px-10 text-lg font-semibold text-foreground transition-all hover:border-rose-500/50 hover:bg-rose-500/10 bg-transparent"
-                        >
-                            Watch demo
-                        </Button>
-                    </MagneticButton> */}
                 </div>
-
-                {/* <p className="fade-in-element mt-8 text-sm text-muted-foreground opacity-0 transition-all duration-700 delay-400 [&.animate-in]:opacity-100">
-                    No credit card required · 14-day free trial · Cancel anytime
-                </p> */}
             </div>
         </section>
     )
