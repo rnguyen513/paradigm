@@ -5,6 +5,7 @@ import { Database } from "@/components/database"
 import { CTA } from "@/components/cta"
 import { ParticleField } from "@/components/particle-field"
 import { FloatingElements } from "@/components/floating-elements"
+import { ValueGrid } from "@/components/value-grid"
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       {/* <FloatingElements /> */}
       <Hero />
       <Features />
+      <ValueGrid/>
       <Integration />
       {/* <Database />
       <CTA /> */}
