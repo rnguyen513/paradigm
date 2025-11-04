@@ -1,9 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Gideon_Roman } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import { _gideonRoman, _libreBaskerville, _libreBaskervilleBold } from "@/components/fonts"
+import { _gideonRoman, _libreBaskerville, _libreBaskervilleBold, _roboto } from "@/components/fonts"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={_libreBaskerville.className}>
+    <html lang="en" className={_roboto.className}>
       <body className={`antialiased`}>
         {children}
         <Analytics />

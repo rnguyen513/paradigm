@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { MagneticButton } from "./magnetic-button"
 import { useRouter } from "next/navigation"
-import { _libreBaskervilleBold } from "./fonts"
+import { _libreBaskervilleBold, _robotoSerif } from "./fonts"
 
 export function Hero() {
     const heroRef = useRef<HTMLElement>(null)
@@ -57,7 +57,7 @@ export function Hero() {
                         Fine-tuned predictive
                     </span>
                     <br />
-                    <span className={`animate-gradient bg-gradient-to-r from-[#4A0E8A] via-[#8E5BFF] to-[#6A24C8] bg-clip-text text-transparent ${_libreBaskervilleBold.className}`}>
+                    <span className={`animate-gradient bg-gradient-to-r from-[#4A0E8A] via-[#8E5BFF] to-[#6A24C8] bg-clip-text text-transparent ${_robotoSerif.className}`}>
                         research intelligence
                     </span>
                 </h1>
